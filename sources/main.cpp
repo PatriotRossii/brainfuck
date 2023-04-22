@@ -58,7 +58,10 @@ void evaluate(std::string_view code) {
 }
 
 int main(int argc, char* argv[]) {
-	if (argc != 2) return 1;
+	if (argc != 2) {
+		std::cout << "Usage: " << argv[0] << " filename" << std::endl;
+		return 1;
+	}
 
 	std::ifstream ifs(argv[1]);
 	std::string code(std::istreambuf_iterator<char>{ifs}, {});
